@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../style/core.css"/>
     <title>Gear Life — 固齿不回链，生活不回头</title>
 </head>
-<body>
+<body ng-app="index">
 <!--头部-->
 <div class="header container-fluid" >
     <span class="ico glyphicon glyphicon-triangle-right"></span>
@@ -20,32 +20,37 @@
     </button>
 </div>
 <!--广告栏-->
-<div class="banner container-fluid">
-    <ul  class="col-md-12">
-        <li class="sub  col-md-4">
+<div class="banner container-fluid" ng-controller="bannerController">
+    <ul  class="" ng-init="extend=1">
+        <li class="sub  " ng-class="{true:'col-md-10',false:'col-md-1'}[extend===1]">
             <img src="../images/index/banner1.jpg" alt="banner1"/>
-            <a class="intro">
+            <a class="intro" ng-click="getExtend($event)">
                 <span class="author">Author</span>
                 <span class="date">Aug 2th 2016</span>
                 <span class="name">Luxury Ring</span>
             </a>
         </li>
-       <!-- <li class="sub  col-md-4 col-md-offset-4">
+        <li class="sub " ng-class="{true:'col-md-10',false:'col-md-1'}[extend===2]">
             <img src="../images/index/banner2.jpg" alt="banner2"/>
-            <a class="intro">
+            <a class="intro" ng-click="getExtend($event)">
                 <span class="author">Author</span>
                 <span class="date">Aug 2th 2016</span>
                 <span class="name">Luxury Ring</span>
             </a>
         </li>
-        <li class="sub  col-md-4 col-md-offset-8">
+        <li class="sub  " ng-class="{true:'col-md-10',false:'col-md-1'}[extend===3]">
             <img src="../images/index/banner3.jpg" alt="banner3"/>
-            <a class="intro">
+            <a class="intro" ng-click="getExtend($event)">
                 <span class="author">Author</span>
                 <span class="date">Aug 2th 2016</span>
                 <span class="name">Luxury Ring</span>
             </a>
-        </li>-->
+        </li>
+    </ul>
+    <ul class="">
+        <li></li>
+        <li></li>
+        <li></li>
     </ul>
 </div>
 <!--推广信息-->
@@ -57,6 +62,7 @@
 <!--底部-->
 <div id="footer"></div>
 <script src="../vendor/jquery/jquery-1.11.3.min.js"></script>
+<script src="../vendor/angular/angularjs.js"></script>
 <script src="../js/index.js"></script>
 </body>
 </html>

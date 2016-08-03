@@ -51,28 +51,31 @@ a:hover { text-decoration: none; }
     border: 0;
 }
 .banner {
-    margin-left: -30px;
+    /*margin-left: -30px;*/
+    padding-left: 0;
+    padding-right: 0;
 }
 .banner .sub {
     height: 500px;
     overflow: hidden;
     display: block;
-    position: absolute;
+    position: relative;
     float: left;
     overflow: hidden;
     padding-left: 0;
     transition: 0.5s;
+    /*cursor: pointer;*/
 }
 .banner .sub .intro {
     display: block;
     position: absolute;
     padding-left: 50px;
-    width: 100%;
+    width: 300px;
     bottom: 50px;
     color: #FFF;
     word-spacing: 10px;
-    background: rgba(0,0,0,0.5);
-    cursor:w-resize;
+    /*background: rgba(0,0,0,0.5);*/
+    cursor:pointer;
 }
 
 .banner .sub .intro .author {

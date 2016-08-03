@@ -2,6 +2,7 @@
  * Created by 陈祥 on 2016/8/2.
  */
 
+/*
 $(function () {
     $(".banner .sub .intro").click(function () {
 
@@ -15,4 +16,20 @@ $(function () {
         //console.log(a)
 
     })
-})
+})*/
+
+angular.module('index',[])
+    .controller('bannerController',['$scope', function ($scope) {
+        $scope.getExtend = function (event) {
+            if(event.target.nodeName === 'SPAN'){
+                console.log('span_success ' + $scope.extend)
+
+                $scope.extend = angular.element('.banner ul li').index(angular.element(event.target).parent().parent()) + 1;
+
+                console.log('span_success ' + $scope.extend)
+            }else if(event.target.nodeName === 'A'){
+                console.log('a_success')
+                $scope.extend = angular.element('.banner ul li').index(angular.element(event.target).parent()) + 1;
+            }
+        }
+    }])
