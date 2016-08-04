@@ -1,10 +1,10 @@
 {
   "name": "gearlife",
   "version": "1.0.0",
-  "description": "fixed gear website",
+  "description": "my website",
   "main": "index.js",
   "scripts": {
-    "test": "gear"
+    "test": "test gear"
   },
   "repository": {
     "type": "git",
@@ -13,7 +13,7 @@
   "keywords": [
     "chenxiang"
   ],
-  "author": "cx",
+  "author": "CoffeeHi",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/CoffeeHi/gearlife/issues"
