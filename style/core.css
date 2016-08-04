@@ -63,8 +63,12 @@ a:hover { text-decoration: none; }
     float: left;
     overflow: hidden;
     padding-left: 0;
-    transition: 0.5s;
+    transition: 1s;
     /*cursor: pointer;*/
+}
+.banner .sub img {
+    display: block;
+    /*height: 500px;*/
 }
 .banner .sub .intro {
     display: block;
@@ -105,9 +109,4 @@ a:hover { text-decoration: none; }
 }
 .banner ul li:nth-child(3){
     z-index: 30;
-}
-
-.extend {
-    width: 90%;
-    transition: 0.5s;
 }
