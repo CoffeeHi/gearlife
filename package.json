@@ -1,0 +1,31 @@
+{
+  "name": "gearlife",
+  "version": "1.0.0",
+  "description": "my website",
+  "main": "index.js",
+  "scripts": {
+    "test": "test gear"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CoffeeHi/gearlife.git"
+  },
+  "keywords": [
+    "chenxiang"
+  ],
+  "author": "CoffeeHi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CoffeeHi/gearlife/issues"
+  },
+  "homepage": "https://github.com/CoffeeHi/gearlife#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}
