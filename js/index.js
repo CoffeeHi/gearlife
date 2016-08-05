@@ -34,7 +34,7 @@ angular.module('index',[])
                         jqItem.removeAttr('width');
                     }
                 });*/
-                angular.forEach(angular.element('.banner ul li img'), function (item) {
+                /*angular.forEach(angular.element('.banner ul li img'), function (item) {
                     //console.log(item.src)
                     //console.log(angular.element(event.target).parent().prev()[0].currentSrc)
                     if(item.src === angular.element(event.target).parent().prev()[0].currentSrc){
@@ -42,8 +42,7 @@ angular.module('index',[])
                     }else{
                         angular.element(item).css('width','');
                     }
-                });
-                console.log('span_success ' + $scope.extend)
+                });*/
             }else if(event.target.nodeName === 'A'){
                 console.log('a_success')
                 $scope.extend = angular.element('.banner ul li').index(angular.element(event.target).parent()) + 1;
@@ -56,13 +55,13 @@ angular.module('index',[])
                         jqItem.removeAttr('width');
                     }
                 });*/
-                angular.forEach(angular.element('.banner ul li img'), function (item) {
+                /*angular.forEach(angular.element('.banner ul li img'), function (item) {
                     if(item.src === angular.element(event.target).prev()[0].currentSrc){
                         angular.element(item).css('width','100%');
                     }else{
                         angular.element(item).css('width','');
                     }
-                });
+                });*/
             }
         }
     }])

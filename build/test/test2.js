@@ -1,3 +1,3 @@
 var b = function(){
-	return 2+2;
-};
+	return 5+2;
+}

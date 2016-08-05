@@ -1,8 +1,13 @@
 /**
  * Created by 陈祥 on 2016/8/4.
  */
+
+
+
 module.exports = function(grunt) {
-    var sassStyle = 'expanded';
+
+    require('load-grunt-tasks')(grunt);
+
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -11,57 +16,47 @@ module.exports = function(grunt) {
                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
             },
             build: {
-                src: 'global.js',
+                src: 'build/global.js',
                 dest: 'build/<%= pkg.name %>_global.min.js'
-            }
-        },
-        sass: {
-            output : {
-                options: {
-                    style: sassStyle
-                },
-                files: {
-                    './style.css': './scss/style.scss'
-                }
             }
         },
 		concat: {
 			options: {
-				separator: ''
+				separator: ';'
 			},
 			dist: {
-				src: ['./js/test1.js', './js/test2.js'],
-				dest: './global.js'
+				src: ['./build/test/test1.js', './build/test/test2.js'],
+				dest: './build/global.js'
 			}
 		},
-		jshint: {
+	/*	jshint: {
 			all: ['./js/test*.js']
-		},
+		},*/
         watch: {
             scripts: {
-                files: ['./src/plugin.js','./src/plugin2.js'],
-                tasks: ['concat','jshint','uglify']
-            },
-            sass: {
-                files: ['./scss/style.scss'],
-                tasks: ['sass']
+                files: ['./build/test/test1.js', './build/test/test2.js'],
+                tasks: ['concat','uglify']
             },
             livereload: {
                 options: {
                     livereload: '<%= connect.options.livereload %>'
                 },
                 files: [
-                    'index.html',
-                    'style.css',
-                    'js/global.min.js'
+                    'build/test.html',
+                    'build/test/test.css',
+                    'build/<%= pkg.name %>_global.min.js'
                 ]
             }
         },
         connect: {
             options: {
                 port: 9000,
-                open: true,
-                livereload: 35729,
+                open: {
+                    target: 'http://localhost:9001/build/test.html', // target url to open
+                    appName: 'open', // name of the app that opens, ie: open, start, xdg-open
+                    callback: function() {} // called when the app has opened
+                },
+                livereload: 35729,//LiveReload的默认端口号，你也可以改成你想要的端口号
                 // Change this to '0.0.0.0' to access the server from outside
                 hostname: 'localhost'
             },
@@ -74,23 +69,9 @@ module.exports = function(grunt) {
         }
     });
 
-   // Load the plugin that provides the "uglify" task.
-    grunt.loadNpmTasks('grunt-contrib-uglify');
 
-	grunt.loadNpmTasks('grunt-contrib-concat');
- 
-    grunt.loadNpmTasks('grunt-contrib-sass');
-	
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-connect');
-
-    // Default task(s).
-    grunt.registerTask('ug', ['uglify']);
-	grunt.registerTask('concatjs',['concat'])
-    grunt.registerTask('outputcss',['sass']);
-    grunt.registerTask('hint',['jshint']);
-	grunt.registerTask('compressjs',['jshint','concat','uglify']);
-
+    grunt.registerTask('concatjs',['concat']);
+    grunt.registerTask('compressjs',['concat','uglify']);
+    grunt.registerTask('watchit',['concat','uglify','connect','watch']);
     grunt.registerTask('default');
 };
