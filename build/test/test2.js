@@ -1,3 +1,1 @@
-var b = function(){
-	return 5+2;
-}
+console.log(2)
