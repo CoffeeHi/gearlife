@@ -28,5 +28,8 @@
     "grunt-contrib-uglify": "^2.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "load-grunt-tasks": "^3.5.0"
+  },
+  "dependencies": {
+    "angular-route": "^1.5.8"
   }
 }

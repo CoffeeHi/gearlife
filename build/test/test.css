@@ -2,3 +2,7 @@ h1 {
     color: red;
     font-family: '宋体';
 }
+
+.selected {
+    background-color: lightgreen;
+}

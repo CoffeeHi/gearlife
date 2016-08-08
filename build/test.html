@@ -3,15 +3,17 @@
 <head lang="en">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="test/test.css"/>
+    <link rel="stylesheet" href="../vendor/bootstrap3/css/bootstrap.min.css"/>
     <title></title>
 </head>
-<body>
-<h1>success</h1>
-<h6>success</h6>
-<h1>success</h1>
-<h2>success</h2>
-<h1>success</h1>
-<h1>success</h1>
+<body ng-app="myApp" class="container">
+<table class="table" ng-controller="RestaurantController">
+    <tr ng-repeat="res in directory" ng-click="selectRestaurant($index)" ng-class="{selected: $index==selectedRow}">
+        <td>{{res.name}}</td>
+        <td>{{res.cuisine}}</td>
+    </tr>
+</table>
+<!--<h1>bbbbbbbbbbbb</h1>-->
 <!--<script src="gearlife_global.min.js"></script>-->
 <script src="../vendor/requirejs/requirejs.js" data-main="main.config.js"></script>
 </body>

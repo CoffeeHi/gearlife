@@ -42,9 +42,8 @@ module.exports = function(grunt) {
                     livereload: '<%= connect.options.livereload %>'
                 },
                 files: [
-                    'build/test.html',
-                    'build/test/test.css',
-                    'build/<%= pkg.name %>_global.min.js'
+                    'build/*',
+                    'build/test/*'
                 ]
             }
         },

@@ -1,0 +1,8 @@
+<div><strong>Subject:</strong></div>{{message.subject}}
+<div><strong>Sender:</strong></div>{{message.sender}}
+<div><strong>Date:</strong></div>{{message.date}}
+<div>
+    <strong>To:</strong>
+    <span ng-repeat="recipient in message.recipients">{{recipient}}</span>
+    <div>{{message.message}}</div>
+</div>
