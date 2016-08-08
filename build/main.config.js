@@ -9,7 +9,7 @@ require.config({
         "test2": "test/test2",
         "test1": "test/test1",
         'an':'../vendor/angular/angularjs',
-        'angular-route':'../node_modules/angular-route/angular-route',
+        'angular-route':'../vendor/angular/angular-route/angular-route',
         'angular':'angular'
     }
 });

@@ -13,6 +13,15 @@
         <td>{{res.cuisine}}</td>
     </tr>
 </table>
+<div ng-controller="SomeController">
+    <button ng-click="clickUnfocused()">
+        Not focused
+    </button>
+    <button ngbk-focus ng-click="clickFocused()">
+        I'm very focused!
+    </button>
+    <div>{{message.text}}</div>
+</div>
 <!--<h1>bbbbbbbbbbbb</h1>-->
 <!--<script src="gearlife_global.min.js"></script>-->
 <script src="../vendor/requirejs/requirejs.js" data-main="main.config.js"></script>
